@@ -67,3 +67,29 @@ function updateCurrentText() {
 }
 
 createCards();
+
+// Event Listeners
+
+nextBtn.addEventListener('click', () => {
+  cardsDOM[currentActiveCard].className = 'card left';
+  currentActiveCard = currentActiveCard + 1;
+
+  if (currentActiveCard > cardsDOM.length - 1) {
+    currentActiveCard = cardsDOM.length - 1;
+  }
+
+  cardsDOM[currentActiveCard].className = 'card active';
+  updateCurrentText();
+});
+
+prevBtn.addEventListener('click', () => {
+  cardsDOM[currentActiveCard].className = 'card right';
+  currentActiveCard = currentActiveCard - 1;
+
+  if (currentActiveCard < 0) {
+    currentActiveCard = 0;
+  }
+
+  cardsDOM[currentActiveCard].className = 'card active';
+  updateCurrentText();
+});
