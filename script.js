@@ -138,3 +138,10 @@ addCardBtn.addEventListener('click', () => {
     alert('Please add a question and answer');
   }
 });
+
+// Clear cards button
+clearBtn.addEventListener('click', () => {
+  localStorage.removeItem('cards');
+  cardsContainer.innerHTML = '';
+  window.location.reload();
+});
